@@ -1,32 +1,27 @@
-// const array = ['mango', 'poly', 'ajax']
-
-// for (let i = 0; i < array.length; i += 1) {
-//    console.log(i, array[i]);
-// }
 
 
+function isEnoughCapacity(products, containerSize) {
+    let totalVolume = 0;
+    for (let key in products) {
+        totalVolume += products[key];
+    }
+    return totalVolume <= containerSize;
 
-// function minNum(numbers){
-//     let smallNumber = numbers[0];
-//     for (const number of numbers) {
-//         if (smallNumber > number) {
-//             smallNumber = number;
-            
-//         }
-//     }
-//     return smallNumber;
-// }
-
-// console.log(minNum([26, 10, 8, 20, 95, 67, 77, 5, 45]));
+}
 
 
+console.log(
+  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+); // true
 
-// const str = "ротатор"
-// const newString = "Hello"
+console.log(
+  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+); // false
 
-// const strReversed = str.split('').reverse('').join('');
-// // console.log(strReversed === str);
+console.log(
+  isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+); // true
 
-
-// const newStringReverse = newString.split('').reverse('').join('');
-// console.log(newStringReverse === newString);
+console.log(
+  isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+); // false
